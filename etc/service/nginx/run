@@ -1,0 +1,6 @@
+#!/bin/bash -e
+
+# Initialization hook
+[ -f /etc/service/nginx/run.initialization ] && source /etc/service/nginx/run.initialization
+
+exec /usr/sbin/nginx 2>&1
