@@ -8,4 +8,3 @@ RUN apt-get update -q -q && \
  sed -i 's/\/\$nginx_version//' /etc/nginx/fastcgi_params
 
 COPY ./etc /etc
-
