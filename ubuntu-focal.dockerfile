@@ -1,4 +1,4 @@
-FROM tozd/runit:ubuntu-bionic
+FROM tozd/runit:ubuntu-focal
 
 EXPOSE 80/tcp
 
