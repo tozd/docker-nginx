@@ -16,7 +16,3 @@ to configure proxy's IP address for Nginx to correctly resolve and log clients' 
 When you are extending this image, you can add a script `/etc/service/nginx/run.initialization`
 which will be run at a container startup, after the container is initialized, but before the
 Nginx daemon is run.
-
-Docker images are rebuild daily to get any latest (security) updates.
-If you do the same in your image (which extends this image), you will
-get those updates as well.
