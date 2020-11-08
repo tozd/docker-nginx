@@ -1,4 +1,4 @@
-FROM tozd/runit:ubuntu-focal
+FROM registry.gitlab.com/tozd/docker/runit:ubuntu-focal
 
 EXPOSE 80/tcp
 

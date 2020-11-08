@@ -2,6 +2,13 @@
 
 <https://gitlab.com/tozd/docker/nginx>
 
+Available as:
+
+* [`tozd/nginx`](https://hub.docker.com/r/tozd/nginx)
+* [`registry.gitlab.com/tozd/docker/nginx`](https://gitlab.com/tozd/docker/nginx/container_registry)
+
+## Description
+
 Image providing [Nginx](http://nginx.org) HTTP server.
 
 The intended use of this image is that it is extended for images which serve content over the HTTP.
