@@ -2,5 +2,5 @@ ARG IMAGE
 
 FROM $IMAGE
 
-COPY ./test /test
-COPY ./test/test.conf /etc/nginx/sites-enabled/test.conf
+COPY ./index.html /test/index.html
+COPY ./test.conf /etc/nginx/sites-enabled/test.conf
