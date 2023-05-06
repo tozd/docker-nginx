@@ -33,4 +33,6 @@ sleep 5
 echo "Testing"
 ADDRESS="$(LC_ALL=C nslookup -type=a docker 2>/dev/null | sed -nr '/Name/,+1s|Address(es)?: *||p')"
 echo "$ADDRESS site.test" >> /etc/hosts
-wget -T 30 -q -O - http://site.test:80 | grep -q '<title>Test site</title>'
+cat /etc/hosts
+ping -c 1 site.tet
+wget -T 30 -q -O - http://site.test | grep -q '<title>Test site</title>'
