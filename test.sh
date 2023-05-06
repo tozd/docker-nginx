@@ -28,7 +28,7 @@ docker run -d --name test --rm -p 80:8080 testimage
 cleanup_docker=1
 
 echo "Sleeping"
-sleep 5
+sleep 20
 
 echo "Testing"
 ADDRESS="$(getent hosts docker | awk '{print $1}')"
