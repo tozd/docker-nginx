@@ -32,8 +32,8 @@ sleep 20
 
 docker ps
 docker logs test
-docker cp test:/var/log/nginx/site.test_error.log site.test_error.log
-cat site.test_error.log
+docker cp test:/var/log/nginx/error.log error.log
+cat error.log
 
 echo "Testing"
 ADDRESS="$(getent hosts docker | awk '{print $1}')"
