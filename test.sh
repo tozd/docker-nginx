@@ -30,6 +30,11 @@ cleanup_docker=1
 echo "Sleeping"
 sleep 20
 
+docker ps
+docker logs test
+docker cp test:/var/log/nginx/site.test_error.log site.test_error.log
+cat site.test_error.log
+
 echo "Testing"
 ADDRESS="$(getent hosts docker | awk '{print $1}')"
 echo "$ADDRESS site.test" >> /etc/hosts
