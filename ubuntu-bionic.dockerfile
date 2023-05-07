@@ -15,4 +15,4 @@ RUN apt-get update -q -q && \
   apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ~/.cache ~/.npm
 
 COPY ./etc/nginx /etc/nginx
-COPY ./etc/service/nginx /etc/nginx/service/nginx
+COPY ./etc/service/nginx /etc/service/nginx
