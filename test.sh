@@ -30,8 +30,6 @@ cleanup_docker=1
 echo "Sleeping"
 sleep 5
 
-docker exec test ps axu
-
 echo "Testing"
 ADDRESS="$(getent hosts docker | awk '{print $1}')"
 echo "$ADDRESS site.test" >> /etc/hosts
