@@ -6,7 +6,19 @@ else
   rm -f /etc/nginx/conf.d/set_real_ip_from.conf
 fi
 
+if [ "${LOG_TO_STDOUT}" != "1" ]; then
+  for file in /var/log/nginx/default_access.log /var/log/nginx/access.log /var/log/nginx/error.log ; do
+    if [[ -L "$file" ]]; then
+      rm -f "$file"
+    fi
+  done
+else
+  ln -sf /dev/stdout /var/log/nginx/default_access.log
+  ln -sf /dev/stdout /var/log/nginx/access.log
+  ln -sf /dev/stderr /var/log/nginx/error.log
+fi
+
 # Initialization hook.
 [ -f /etc/service/nginx/run.initialization ] && source /etc/service/nginx/run.initialization
 
-exec /usr/sbin/nginx 2>&1
+exec /usr/sbin/nginx

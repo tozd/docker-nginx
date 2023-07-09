@@ -9,7 +9,7 @@ Available as:
 
 ## Image inheritance
 
-[`tozd/base`](https://gitlab.com/tozd/docker/base) ← [`tozd/runit`](https://gitlab.com/tozd/docker/runit) ← `tozd/nginx`
+[`tozd/base`](https://gitlab.com/tozd/docker/base) ← [`tozd/dinit`](https://gitlab.com/tozd/docker/dinit) ← `tozd/nginx`
 
 ## Tags
 
@@ -21,7 +21,7 @@ Available as:
 
 ## Volumes
 
-- `/var/log/nginx`: Log files.
+- `/var/log/nginx`: Log files when `LOG_TO_STDOUT` is not set to `1`.
 - `/etc/nginx/sites-volume`: Nginx configuration for sites served by the container.
 
 ## Variables
@@ -30,6 +30,7 @@ Available as:
   which defines trusted addresses that are known to send correct replacement addresses. If the container is run behind a reverse
   HTTP proxy, you can set this environment variable to configure proxy's IP address for Nginx to correctly resolve and log
   clients' IP addresses.
+- `LOG_TO_STDOUT`: If set to `1` output logs to stdout (retrievable using `docker logs`) instead of log volumes.
 
 ## Ports
 
