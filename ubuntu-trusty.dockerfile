@@ -3,6 +3,7 @@ FROM registry.gitlab.com/tozd/docker/dinit:ubuntu-trusty
 EXPOSE 80/tcp
 
 ENV SET_REAL_IP_FROM=
+ENV LOG_TO_STDOUT=0
 
 VOLUME /etc/nginx/sites-volume
 VOLUME /var/log/nginx
