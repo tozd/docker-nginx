@@ -13,7 +13,7 @@ cleanup() {
 
   if [ "$cleanup_image" -ne 0 ]; then
     echo "Removing Docker image"
-    docker image rm testimage
+    docker image rm -f testimage
   fi
 }
 
