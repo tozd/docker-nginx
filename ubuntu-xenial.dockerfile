@@ -18,3 +18,4 @@ RUN apt-get update -q -q && \
 COPY ./etc/nginx /etc/nginx
 COPY ./json/json_log_without_escape.conf /etc/nginx/conf.d/json_log_without_escape.conf
 COPY ./etc/service/nginx /etc/service/nginx
+COPY ./json/log /etc/service/nginx/log
