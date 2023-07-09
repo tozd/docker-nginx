@@ -42,6 +42,9 @@ Image providing [Nginx](http://nginx.org) HTTP server.
 
 The intended use of this image is that it is extended for images which serve content over the HTTP.
 
+Access logs are formatted as JSON.
+You can use defined `json` log format to format additional access logs as JSON as well.
+
 When extending the image, you can put sites configuration files under `/etc/nginx/sites-enabled/` to add custom sites.
 
 Alternatively, you can mount a volume into `/etc/nginx/sites-volume/` directory and provide sites there.

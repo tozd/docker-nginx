@@ -16,4 +16,5 @@ RUN apt-get update -q -q && \
   apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ~/.cache ~/.npm
 
 COPY ./etc/nginx /etc/nginx
+COPY ./json/json_log_without_escape.conf /etc/nginx/conf.d/json_log_without_escape.conf
 COPY ./etc/service/nginx /etc/service/nginx
