@@ -24,7 +24,7 @@ time docker build -t testimage -f test/Dockerfile --build-arg "IMAGE=${CI_REGIST
 cleanup_image=1
 
 echo "Running Docker image"
-docker run -d --name test --rm -p 80:80 testimage
+docker run -d --name test --env LOG_TO_STDOUT=1 --rm -p 80:80 testimage
 cleanup_docker=1
 
 echo "Sleeping"
@@ -34,3 +34,6 @@ echo "Testing"
 ADDRESS="$(getent hosts docker | awk '{print $1}')"
 echo "$ADDRESS site.test" >> /etc/hosts
 wget -T 30 -q -O - http://site.test | grep -q '<title>Test site</title>'
+
+echo "Logs"
+docker logs test
