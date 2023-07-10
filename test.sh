@@ -29,7 +29,7 @@ time docker build -t testimage -f test/Dockerfile --build-arg "IMAGE=${CI_REGIST
 cleanup_image=1
 
 echo "Running Docker image"
-docker run -d --name test --env LOG_TO_STDOUT=1 -p 80:80 testimage
+docker run -d --name test -e "LOG_TO_STDOUT=1" -p 80:80 testimage
 cleanup_docker=1
 
 echo "Sleeping"
