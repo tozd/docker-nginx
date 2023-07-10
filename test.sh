@@ -5,12 +5,14 @@ set -e
 cleanup_docker=0
 cleanup_image=0
 cleanup() {
+  set +e
+
   if [ "$cleanup_docker" -ne 0 ]; then
     echo "Logs"
-    docker logs test || true
+    docker logs test
 
     echo "Stopping Docker image"
-    docker stop test || true
+    docker stop test
     docker rm -f test
   fi
 
