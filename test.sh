@@ -6,10 +6,12 @@ cleanup_docker=0
 cleanup_image=0
 cleanup() {
   if [ "$cleanup_docker" -ne 0 ]; then
+    echo "Logs"
+    docker logs test
+
     echo "Stopping Docker image"
     docker stop test
   fi
-
 
   if [ "$cleanup_image" -ne 0 ]; then
     echo "Removing Docker image"
@@ -34,6 +36,3 @@ echo "Testing"
 ADDRESS="$(getent hosts docker | awk '{print $1}')"
 echo "$ADDRESS site.test" >> /etc/hosts
 wget -T 30 -q -O - http://site.test | grep -q '<title>Test site</title>'
-
-echo "Logs"
-docker logs test
