@@ -53,11 +53,6 @@ When you are extending this image, you can add a script `/etc/service/nginx/run.
 which will be run at a container startup, after the container is initialized, but before the
 Nginx daemon is run.
 
-All images are rebuild daily to get any latest (security) updates from
-the underlying distribution.
-If you do the same in your image (which extends any of these images), you will
-get those updates as well.
-
 ## GitHub mirror
 
 There is also a [read-only GitHub mirror available](https://github.com/tozd/docker-nginx),
