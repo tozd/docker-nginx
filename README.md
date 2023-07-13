@@ -44,6 +44,7 @@ The intended use of this image is that it is extended for images which serve con
 
 Access logs are formatted as JSON.
 You can use defined `json` log format to format additional access logs as JSON as well.
+When `LOG_TO_STDOUT` is set to `1`, Docker image logs output to stdout and stderr. All stdout output is JSON.
 
 When extending the image, you can put sites configuration files under `/etc/nginx/sites-enabled/` to add custom sites.
 
