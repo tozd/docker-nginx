@@ -18,6 +18,7 @@ Available as:
 - `ubuntu-bionic`: nginx 1.14.0
 - `ubuntu-focal`: nginx 1.18.0
 - `ubuntu-jammy`: nginx 1.18.0
+- `ubuntu-noble`: nginx 1.24.0
 
 ## Volumes
 
