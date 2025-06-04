@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+trap 'echo "ERROR: $BASH_SOURCE:$LINENO $BASH_COMMAND" >&2' ERR
+
 if [ -n "$SET_REAL_IP_FROM" ]; then
   echo "set_real_ip_from $SET_REAL_IP_FROM;" > /etc/nginx/conf.d/set_real_ip_from.conf
 else

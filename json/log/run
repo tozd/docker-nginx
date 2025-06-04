@@ -1,4 +1,6 @@
 #!/bin/bash -e
 
+trap 'echo "ERROR: $BASH_SOURCE:$LINENO $BASH_COMMAND" >&2' ERR
+
 # On older vesions of nginx there is no JSON escaping, so we do not escape in nginx but use regex2json to escape.
 exec chpst -u nobody:nogroup regex2json '^{"address":"(?P<address>\S+?)","time":(?P<time___float>\S+?),"method":"(?P<method>\S+?)","uri":"(?P<uri>.*)","status":(?P<status___int>\S+?),"referer":"(?P<referer>.*)","userAgent":"(?P<userAgent>.*)","protocol":"(?P<protocol>\S+?)","server":"(?P<server>.+?)","scheme":"(?P<scheme>\S+?)","https":"(?P<https>\S*?)","connection":"(?P<connection>\S+?)","connectionRequests":(?P<connectionRequests___int>\S+?),"host":"(?P<host>.*?)","responseSize":(?P<responseSize___int>\S+?),"requestSize":(?P<requestSize___int>\S+?),"duration":(?P<duration___float>\S+?)}$'
