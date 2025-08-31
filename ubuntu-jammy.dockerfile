@@ -15,7 +15,7 @@ RUN apt-get update -q -q && \
   sed -i 's/access_log/#access_log/' /etc/nginx/nginx.conf && \
   echo 'fastcgi_param SCRIPT_FILENAME $request_filename;' >> /etc/nginx/fastcgi_params && \
   mkdir -p /etc/nginx/stream.d && \
-  echo -e "stream {\n\tinclude /etc/nginx/stream.d/*.conf;\n}" >> /etc/nginx/nginx.conf && \
+  /bin/echo -e "stream {\n\tinclude /etc/nginx/stream.d/*.conf;\n}" >> /etc/nginx/nginx.conf && \
   apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ~/.cache ~/.npm
 
 COPY ./etc/nginx /etc/nginx
