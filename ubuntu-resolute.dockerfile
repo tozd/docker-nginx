@@ -13,6 +13,7 @@ RUN apt-get update -q -q && \
   echo "daemon off;" >> /etc/nginx/nginx.conf && \
   sed -i 's/\/\$nginx_version//' /etc/nginx/fastcgi_params && \
   sed -i 's/access_log/#access_log/' /etc/nginx/nginx.conf && \
+  sed -i 's/server_tokens/#server_tokens/' /etc/nginx/nginx.conf && \
   echo 'fastcgi_param SCRIPT_FILENAME $request_filename;' >> /etc/nginx/fastcgi_params && \
   mkdir -p /etc/nginx/stream.d && \
   /bin/echo -e "stream {\n\tinclude /etc/nginx/stream.d/*.conf;\n}" >> /etc/nginx/nginx.conf && \
