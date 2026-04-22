@@ -19,6 +19,7 @@ Available as:
 - `ubuntu-focal`: nginx 1.18.0
 - `ubuntu-jammy`: nginx 1.18.0
 - `ubuntu-noble`: nginx 1.24.0
+- `ubuntu-resolute`: nginx 1.28.3
 
 ## Volumes
 
