@@ -18,7 +18,6 @@ RUN apt-get update -q -q && \
   /bin/echo -e "stream {\n\tinclude /etc/nginx/stream.d/*.conf;\n}" >> /etc/nginx/nginx.conf && \
   apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ~/.cache ~/.npm
 
-COPY ./etc/nginx /etc/nginx
+COPY ./etc /etc
 COPY ./json/json_log_without_escape.conf /etc/nginx/conf.d/json_log_without_escape.conf
-COPY ./etc/service/nginx /etc/service/nginx
 COPY ./json/log /etc/service/nginx/log
