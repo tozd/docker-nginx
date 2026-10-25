@@ -28,10 +28,13 @@ Available as:
 
 ## Variables
 
-- `SET_REAL_IP_FROM`: Configures [`set_real_ip_from`](https://nginx.org/en/docs/http/ngx_http_realip_module.html#set_real_ip_from)
+- `SET_REAL_IP_FROM`: A comma separated list of addresses (or CIDRs) configured with
+  [`set_real_ip_from`](https://nginx.org/en/docs/http/ngx_http_realip_module.html#set_real_ip_from)
   which defines trusted addresses that are known to send correct replacement addresses. If the container is run behind a reverse
-  HTTP proxy, you can set this environment variable to configure proxy's IP address for Nginx to correctly resolve and log
-  clients' IP addresses.
+  HTTP proxy, you can set this environment variable to configure proxy's IP addresses for Nginx to correctly resolve and log
+  clients' IP addresses. The client's IP address is then determined from the `X-Forwarded-For` header, with
+  [`real_ip_recursive`](https://nginx.org/en/docs/http/ngx_http_realip_module.html#real_ip_recursive) enabled, so that
+  addresses which the client itself put into the header are ignored.
 - `LOG_TO_STDOUT`: If set to `1` output logs to stdout (retrievable using `docker logs`) instead of log volumes.
 
 ## Ports
